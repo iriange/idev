@@ -51,43 +51,11 @@ window.addEventListener("load", () => {
 });
 
 let rowAni = document.querySelector(".about .about-content .skills .row");
-function countUp(min=0, max) {
-  for ( min; min <= max; min++) {
-    // p.innerHTML = min
-  setInterval(()=>{
-      document.querySelector(".percent").innerHTML = min + '%'
-      // console.log(p.innerHTML,min)
-    },1000)
-  }
-}
+
 
 const observer = new IntersectionObserver(
   (ev) => {
     if (ev[0].isIntersecting) {
-      let percents = document.querySelectorAll('.percent')
-      let pros_in = document.querySelectorAll('.progress-in')
-      let i = 5
-      let m = 0
-      console.log(percents[m])
-      while (m<i) {
-        let pro = pros_in[m].style.width
-        pro = Number(pro.replace('%', ''))
-        console.log(pro)
-        let n = 0
-        let b = 0
-          const t = setInterval(()=>{
-            percents.innerHTML = `${n++}%`
-            if (n >= pro || b>=i) {
-              clearInterval(t)
-            }
-            console.log(n++)
-          }, 40)
-        // if (percents[m] == pros_in[m]) {
-        //   console.log(percents[m])
-        //   // countUp(0,max)
-        // }
-        m++ 
-      }
       observer.unobserve(rowAni);
       rowAni.classList.add("anime");
     }
