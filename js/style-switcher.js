@@ -56,6 +56,28 @@ let rowAni = document.querySelector(".about .about-content .skills .row");
 const observer = new IntersectionObserver(
   (ev) => {
     if (ev[0].isIntersecting) {
+      let progressbar = document.querySelectorAll('.progress-in')
+      let percents = document.querySelectorAll(".percent")
+      let maxProgress = document.querySelectorAll(".progress-in[data-max]")
+      progressbar.forEach((progress, index)=>{
+        let currentProgress = parseInt(progress.getAttribute("data-progressStart"))
+        console.log();
+        let targetPercent = parseInt(maxProgress[index].getAttribute("data-max"))
+
+        currentProgress = 0
+
+        let interval = setInterval(function() {
+          if (currentProgress >= targetPercent) {
+              clearInterval(interval);
+          } else {
+              currentProgress++;
+              progress.style.width = currentProgress + "%";
+              console.log(progress.style)
+              percents[index].innerHTML = currentProgress + "%";
+              // progress.setAttribute("data-progressStart", currentProgress);
+          }
+      }, 50)
+      })
       observer.unobserve(rowAni);
       rowAni.classList.add("anime");
     }
