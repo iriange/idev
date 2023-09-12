@@ -58,11 +58,9 @@ const observer = new IntersectionObserver(
     if (ev[0].isIntersecting) {
       let progressbar = document.querySelectorAll('.progress-in')
       let percents = document.querySelectorAll(".percent")
-      let maxProgress = document.querySelectorAll(".progress-in[data-max]")
       progressbar.forEach((progress, index)=>{
         let currentProgress = parseInt(progress.getAttribute("data-progressStart"))
-        console.log();
-        let targetPercent = parseInt(maxProgress[index].getAttribute("data-max"))
+        let targetPercent = parseInt(progress.getAttribute("data-max"))
 
         currentProgress = 0
 
@@ -74,7 +72,6 @@ const observer = new IntersectionObserver(
               progress.style.width = currentProgress + "%";
               console.log(progress.style)
               percents[index].innerHTML = currentProgress + "%";
-              // progress.setAttribute("data-progressStart", currentProgress);
           }
       }, 50)
       })

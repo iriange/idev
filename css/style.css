@@ -488,7 +488,7 @@ h3.my-profession {
     height: 100%;
     border-radius: 4px;
     background-color: var(--skin-color);
-    transition: background-color .05s;
+    transition: all .05s;
 }
 
 
