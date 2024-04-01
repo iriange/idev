@@ -68,7 +68,8 @@ function random() {
       "";
   });
 }
-window.addEventListener("load", () => {
+window.addEventListener("load", (e) => {
+  e.preventDefault();
   if (!window.navigator.onLine) {
     gallery.innerHTML = "<li>Vous n'est pas connecté à internet (T_T)</li>";
   } else {
