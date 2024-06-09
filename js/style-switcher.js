@@ -36,7 +36,9 @@ function swicthTime() {
   }
 }
 swicthTime();
+
 const night = document.querySelector(".night");
+
 night.addEventListener("click", () => {
   night.querySelector("i").classList.toggle("fa-sun");
   night.querySelector("i").classList.toggle("fa-moon");
@@ -62,7 +64,6 @@ const observer = new IntersectionObserver(
         let currentProgress = parseInt(progress.getAttribute("data-progressStart"))
         let targetPercent = parseInt(progress.getAttribute("data-max"))
 
-        currentProgress = 0
 
         let interval = setInterval(function() {
           if (currentProgress >= targetPercent) {
@@ -70,10 +71,11 @@ const observer = new IntersectionObserver(
           } else {
               currentProgress++;
               progress.style.width = currentProgress + "%";
-              console.log(progress.style)
+              // console.log(progress.style)
               percents[index].innerHTML = currentProgress + "%";
           }
       }, 50)
+
       })
       observer.unobserve(rowAni);
       rowAni.classList.add("anime");

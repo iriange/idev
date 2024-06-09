@@ -4,6 +4,7 @@
     --bg-black-900: #f2F2fc;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
+    --bg-gradient : linear-gradient( #f1eef100 0% , #151515d2 100% );
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 }
@@ -12,6 +13,7 @@ body.dark {
     --bg-black-900: #151515;
     --bg-black-100: #222222;
     --bg-black-50: #393939;
+    --bg-gradient : linear-gradient(  #15151500 0% , #f1eef1de 100% );
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
 }
@@ -359,6 +361,13 @@ h3.my-profession {
     position: relative;
 }
 
+.home .home-img img {
+    height: 360px;
+    width: 300px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 5px;
+}
 .home .home-img::after {
     content: '';
     position: absolute;
@@ -367,7 +376,7 @@ h3.my-profession {
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
     right: -5px;
-    bottom: 40px;
+    bottom: 0;
 }
 
 .home .home-img::before {
@@ -381,14 +390,8 @@ h3.my-profession {
     top: -40px;
 }
 
-.home .home-img img {
-    height: 360px;
-    width: 300px;
-    object-fit: cover;
-    margin: auto;
-    border-radius: 5px;
-}
 
+/** Section des A propos **/
 
 .about .about-content {
     flex: 0 0 100%;
@@ -585,6 +588,8 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+/** Section des Services **/
+
 .service .container {
     padding-bottom: 40px;
 }
@@ -644,6 +649,7 @@ h3.my-profession {
     line-height: 25px;
 }
 
+/** Section de mon Portfolio **/
 
 .portfolio .container {
     padding-bottom: 30px;
@@ -677,6 +683,42 @@ h3.my-profession {
     width: 100%;
     display: block;
 }
+
+.portfolio-img{
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-img::before{
+    content: 'Bientôt Disponible !';
+    position: absolute;
+    display: flex;
+    font-weight: 700;
+    color: var(--bg-black-900);
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-gradient);
+    z-index: 100;
+    transform: translateY(100%);
+    transition: transform .3s ease-in;
+}
+.portfolio-img:hover::before{
+    transform: translateY(0%);
+    animation: overlay .3s ease .3s 1 linear;
+}
+
+@keyframes overlay {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+/** Section des gallery **/
 
 .gallery{
     width: 100%;
@@ -738,6 +780,9 @@ h3.my-profession {
     font-weight: 800;
     border-radius: 6px;
 }
+
+/** Section des contact **/
+
 .contact-title {
     color: var(--skin-color);
     text-align: center;
@@ -831,6 +876,14 @@ h3.my-profession {
 .contact .contact-form .btn {
     height: 50px;
     padding: 0 50px;
+}
+
+.main-content footer{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: var(--bg-black-100);
+    color: var(--text-black-700);
 }
 
 

@@ -3,6 +3,9 @@ let plus = document.querySelector(".plus");
 let counter = document.querySelector(".counter");
 let gallery = document.querySelector(".gallery");
 let navElementsActive = document.querySelectorAll(".aside .nav li a");
+let years = document.querySelector(".main-content footer span")
+
+years.innerHTML = new Date().getFullYear()
 
 navElementsActive.forEach((navElementActive) => {
   navElementActive.addEventListener("click", () => {
@@ -26,7 +29,7 @@ plus.addEventListener("click", function () {
   sessionStorage.setItem("nbGallerie", `${counter.innerHTML}`);
 });
 minus.addEventListener("click", function (e) {
-  if (counter.innerHTML <= 2) {
+  if (counter.innerHTML <= 2 || counter.innerHTML >= 5) {
     e.preventDefault();
     return;
   } else {
