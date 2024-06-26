@@ -2,6 +2,7 @@
 
 :root {
     --bg-black-900: #f2F2fc;
+    --bg-btn-black-900: #151515;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
     --bg-gradient : linear-gradient( #f1eef100 0% , #151515d2 100% );
@@ -11,6 +12,7 @@
 
 body.dark {
     --bg-black-900: #151515;
+    --bg-btn-black-900: #f2F2fc;
     --bg-black-100: #222222;
     --bg-black-50: #393939;
     --bg-gradient : linear-gradient(  #15151500 0% , #f1eef1de 100% );
@@ -884,6 +886,37 @@ h3.my-profession {
     padding: 10px;
     background: var(--bg-black-100);
     color: var(--text-black-700);
+}
+
+.what{
+    position: fixed;
+    border-radius: 6px;
+    overflow: hidden;
+    bottom: 10vh;
+    right: 10px;
+}
+.what a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--skin-color);
+    background: var(--bg-btn-black-900);
+    width: 40px;
+    height: 40px;
+}
+
+.what a .icon-whatsApp{
+    font-size: 3em;
+} 
+
+.what .hidden-text{
+    padding-left: 6px;
+    font-size: 2vh;
+}
+
+.what a:hover{
+    width: 20em;
+    transition: all 1s ease;
 }
 
 
