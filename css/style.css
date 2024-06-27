@@ -961,7 +961,9 @@ h3.my-profession {
     }
 
     .home .home-img {
-        display: none;
+        flex: 0 0 100%;
+        max-width: 100%;
+        top: 60px;
     }
 }
 
