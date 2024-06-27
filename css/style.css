@@ -907,7 +907,7 @@ h3.my-profession {
 
 .what a .icon-whatsApp{
     font-size: 3em;
-    animation: move 1s ease infinite alternate;
+    animation: move .5s ease infinite alternate;
 } 
 
 .what .hidden-text{
