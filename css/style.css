@@ -2,7 +2,7 @@
 
 :root {
     --bg-black-900: #f2F2fc;
-    --bg-btn-black-900: #151515;
+    --bg-btn-black-900: #f2F2fc;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
     --bg-gradient : linear-gradient( #f1eef100 0% , #151515d2 100% );
@@ -12,7 +12,6 @@
 
 body.dark {
     --bg-black-900: #151515;
-    --bg-btn-black-900: #f2F2fc;
     --bg-black-100: #222222;
     --bg-black-50: #393939;
     --bg-gradient : linear-gradient(  #15151500 0% , #f1eef1de 100% );
@@ -894,6 +893,7 @@ h3.my-profession {
     overflow: hidden;
     bottom: 10vh;
     right: 10px;
+    border: 1px solid var(--skin-color);
 }
 .what a{
     text-decoration: none;
