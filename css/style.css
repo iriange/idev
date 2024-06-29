@@ -142,6 +142,7 @@ section {
     margin-left: -15px;
     margin-right: -15px;
     position: relative;
+    justify-content: center;
 }
 
 
@@ -914,6 +915,15 @@ h3.my-profession {
 .what .hidden-text{
     padding-left: 6px;
     font-size: .9em;
+    visibility: hidden;
+    opacity: .5;
+    transform: translateY(15px);
+    transition: all 1s ease 1s;
+}
+.what a:hover .hidden-text{
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .what a:hover{
