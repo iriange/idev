@@ -21,18 +21,14 @@ function setActiveStyle(couleur) {
     }
   });
 }
-const nightHours = new Date().setHours(18, 0);
-const currentHours = new Date().getTime();
+
+const prefUser = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 function swicthTime() {
-  let fun = document.createElement("div");
-  fun.setAttribute("class", "isNight");
-  fun.innerText = "Il est 18h ;)";
-  if (nightHours <= currentHours) {
+  if (prefUser) {
     document.body.classList.add("dark");
-    main.appendChild(fun);
   } else {
     document.body.classList.remove("dark");
-    fun.classList.remove("isNight");
   }
 }
 swicthTime();
