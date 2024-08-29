@@ -3,18 +3,44 @@
 // let counter = document.querySelector(".counter");
 // let gallery = document.querySelector(".gallery");
 let navElementsActive = document.querySelectorAll(".aside .nav li a");
+let sections = document.querySelectorAll(".section");
 let years = document.querySelector(".main-content footer span")
 
 years.innerHTML = new Date().getFullYear()
 
+const ActivateNav = (navs, nav)=>{
+  for (let i = 0; i < navs.length; i++) {
+    navs[i].classList.remove("active");
+  }
+  nav.classList.add("active");
+}
+
 navElementsActive.forEach((navElementActive) => {
-  navElementActive.addEventListener("click", () => {
-    for (let i = 0; i < navElementsActive.length; i++) {
-      navElementsActive[i].classList.remove("active");
-    }
-    navElementActive.classList.add("active");
-  });
+  navElementActive.addEventListener("click",(e)=> ActivateNav(navElementsActive, e.target));
 });
+
+window.addEventListener('DOMContentLoaded', ()=>{
+  ActivateNav(navElementsActive, navElementsActive[0])
+})
+
+
+const ob = new IntersectionObserver((e)=>{
+  
+    if (e[0].isIntersecting ) {
+      for (let j = 0; j < navElementsActive.length; j++) {
+        if (e[0].target.className == navElementsActive[j].id) {         
+          ActivateNav(navElementsActive, navElementsActive[j])
+        }
+        ob.unobserve(navElementsActive[j])
+      }
+      }
+},{
+  threshold: .3,
+})
+
+sections.forEach(section =>{
+  ob.observe(section)
+})
 
 // const birthyears = new Date('1997-8-1').getFullYear();
 // const currentDate = new Date().getFullYear();

@@ -67,7 +67,6 @@ const observer = new IntersectionObserver(
           } else {
               currentProgress++;
               progress.style.width = currentProgress + "%";
-              // console.log(progress.style)
               percents[index].innerHTML = currentProgress + "%";
           }
       }, 50)

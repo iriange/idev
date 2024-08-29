@@ -321,6 +321,8 @@ section {
 
 .aside .social-link{
     position: absolute;
+    display: flex;
+    gap: 10px;
     bottom: 100px;
 }
 .aside .social-link a{
@@ -438,6 +440,41 @@ h3.my-profession {
     line-height: 25px;
     color: var(--text-black-700);
 }
+
+/* Dots animation  */
+
+.about .about-content .about-text .dots-container{
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+.about .about-content .about-text .dots-container .content{
+    display: flex;
+    margin-bottom: 50px 0;
+}
+.about .about-content .about-text .dots-container p{
+    font-size: 3em;
+    color: var(--text-black-700);
+    animation: dotsAnim .6s infinite alternate ;
+    animation-delay: calc( var(--i)* -1s);
+    transition: all 1s linear;
+}
+.about .about-content .about-text p.column-p{
+    columns: 2;
+}
+
+@keyframes dotsAnim {
+    from{
+        transform: translateY(0) scale(1.5);
+    }
+    to{
+        transform: translateY(-10px) scale(1);
+    }
+}
+
 
 .about .about-content .personal-info {
     flex: 0 0 60%;
@@ -927,6 +964,7 @@ h3.my-profession {
     transition: all 1s ease;
 }
 
+
 @keyframes move {
     from{
         transform: scale(1);
@@ -970,6 +1008,9 @@ h3.my-profession {
         flex: 0 0 100%;
         max-width: 100%;
         top: 60px;
+    }
+    .about .about-content .about-text p.column-p{
+        columns: 1;
     }
 }
 
